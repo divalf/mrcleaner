@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-dark font-body antialiased selection:bg-accent selection:text-white;
+    overflow-x: hidden;
+  }
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+}
+
+.magnetic-btn {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.magnetic-btn:hover {
+  transform: scale(1.03);
+}
+
+.btn-fill-bg {
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.magnetic-btn:hover .btn-fill-bg {
+  transform: translateY(0%);
+}
+
+.interactive-hover {
+  transition: transform 0.3s ease;
+}
+.interactive-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* Modal styles */
+.modal-overlay {
+  backdrop-filter: blur(16px);
+}
